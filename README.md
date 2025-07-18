@@ -1,6 +1,10 @@
 # UPN QR typst template
 
-Univerzalni plačilni nalog UPN QR (Obrazec UPN QR)
+Univerzalni plačilni nalog UPN QR (Obrazec UPN QR) template for [typst](https://typst.app/docs/)
+
+![Preview](/thumbnail.png)
+
+
 
 ## Example
 
@@ -33,6 +37,7 @@ Litostrojska cesta 44a
   referencaPrejemnika1: "SI00",
   referencaPrejemnika2: "1234",
   znesek: "***100,00"
+  qrContent: "generated code for qr"
 )
 ```
 
