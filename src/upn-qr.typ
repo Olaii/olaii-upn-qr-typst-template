@@ -118,11 +118,10 @@
   */
 
   // Wrapper
-  stack(
   block(
     height: 99mm, // A bit smaller so 3 can fit on one page
     width: 210mm,
-    stroke: 0pt,
+    stroke: strokeWidth,
     inset: 0pt,
     clip: true,
     fill: none,
@@ -150,7 +149,7 @@
           top: 6mm,
           right: 3.5mm,
           bottom: 3.5mm,
-          left: 3.5mm,
+          left: 4mm,
         ),
 
         stack(
@@ -217,7 +216,8 @@
           // -------------------- Top (PLAČNIK) --------------------
           block(
             width: 100%,
-            height: 56mm,
+            height: 55mm,
+            stroke: strokeWidth,
             inset: (
               top: 6mm,
               left: 3.5mm,
@@ -227,7 +227,7 @@
 
             stack(
               dir: ttb,
-              spacing: 3mm,
+              spacing: 3.5mm,
 
               // QR code, rows 1-4
               stack(
@@ -237,8 +237,9 @@
                 // Left
                 block(
                   width: 40mm,
-                  height: 40mm,
+                  height: 39.5mm,
                   inset: 3mm,
+                  stroke: strokeWidth,
                   // Koda QR
                   { if (data.qrContent != "") { tiaoma.upnqr(data.qrContent) }}
                 ),
@@ -253,7 +254,7 @@
 
                     // IBAN Plačnika
                     block(
-                      width: 71mm,
+                      width: 71.25mm,
                       height: 5mm,
                       stroke: strokeWidth,
                       inset: 4pt,
@@ -267,7 +268,7 @@
                     booleanBox(data.placnik.polog),
 
                     // Spacer
-                    h(7.5mm),
+                    h(7.25mm),
 
                     // Dvig
                     booleanBox(data.placnik.dvig),
@@ -291,7 +292,7 @@
 
                     // Referenca plačnika 2
                     block(
-                      width: 83mm,
+                      width: 82.5mm,
                       height: 5mm,
                       stroke: strokeWidth,
                       inset: 4pt,
@@ -304,7 +305,7 @@
                   // Row 3
                   // Ime, ulica in kraj plačnika
                   block(
-                    width: 100mm,
+                    width: 99.5mm,
                     height: 15mm,
                     stroke: strokeWidth,
                     inset: 4pt,
@@ -318,11 +319,11 @@
                     dir: ltr,
 
                     // Spacer
-                    h(7.5mm),
+                    h(7.75mm),
 
                     // Znesek
                     block(
-                      width: 41mm,
+                      width: 41.25mm,
                       height: 5mm,
                       stroke: strokeWidth,
                       inset: 4pt,
@@ -330,7 +331,7 @@
                     ),
                   
                     // Spacer
-                    h(6mm),
+                    h(5.75mm),
 
                     // Datum plačila
                     block(
@@ -342,7 +343,7 @@
                     ),
 
                     // Spacer
-                    h(5.5mm),
+                    h(5.25mm),
 
                     // Nujno
                     booleanBox(data.placnik.nujno),
@@ -364,9 +365,9 @@
                   data.placnik.kodaNamena,
                 ),
 
-                // Namen
+                // Namen plačila
                 block(
-                  width: 94mm,
+                  width: 93.75mm,
                   height: 5mm,
                   stroke: strokeWidth,
                   inset: 4pt,
@@ -375,7 +376,7 @@
 
                 // Rok plačila
                 block(
-                  width: 30mm,
+                  width: 29.75mm,
                   height: 5mm,
                   stroke: strokeWidth,
                   inset: 4pt,
@@ -388,9 +389,10 @@
           // -------------------- Bottom (PREJEMNIK) --------------------
           block(
             width: 100%,
-            height: 43mm,
+            height: 44mm,
+            stroke: strokeWidth,
             inset: (
-              top: 2mm,
+              top: 3mm,
               left: 3.5mm,
               right: 4mm,
               bottom: 0mm,
@@ -403,7 +405,7 @@
               // Row 1
               // IBAN prejemnika
               block(
-                width: 127mm,
+                width: 127.5mm,
                 height: 5mm,
                 stroke: strokeWidth,
                 inset: 4pt,
@@ -426,7 +428,7 @@
 
                 // Referenca prejemnika 2
                 block(
-                  width: 83mm,
+                  width: 82.5mm,
                   height: 5mm,
                   stroke: strokeWidth,
                   inset: 4pt,
@@ -437,7 +439,7 @@
               // Row 3
               // Ime, ulica in kraj prejemnika
               block(
-                width: 100mm,
+                width: 99.5mm,
                 height: 15mm,
                 stroke: strokeWidth,
                 inset: 4pt,
@@ -449,6 +451,5 @@
       ),
     ),
   )
-  ,
-  doc)
+  doc
 }
