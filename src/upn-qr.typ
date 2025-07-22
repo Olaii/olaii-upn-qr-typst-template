@@ -2,6 +2,8 @@
 
 #let upn_qr(
   imePlacnika: "",
+  naslovPlacnika: "",
+  krajPlacnika: "",
   ibanPlacnika: "",
   referencaPlacnika1: "",
   referencaPlacnika2: "",
@@ -14,6 +16,8 @@
   dvig: false,
 
   imePrejemnika: "",
+  naslovPrejemnika: "",
+  krajPrejemnika: "",
   ibanPrejemnika: "",
   referencaPrejemnika1: "",
   referencaPrejemnika2: "",
@@ -64,6 +68,8 @@
   let data = (
     placnik: (
       ime: imePlacnika,
+      naslov: naslovPlacnika,
+      kraj: krajPlacnika,
       iban: ibanPlacnika,
       referenca1: referencaPlacnika1,
       referenca2: referencaPlacnika2,
@@ -77,13 +83,39 @@
     ),
     prejemnik: (
       ime: imePrejemnika,
+      naslov: naslovPrejemnika,
+      kraj: krajPrejemnika,
       iban: ibanPrejemnika,
       referenca1: referencaPrejemnika1,
       referenca2: referencaPrejemnika2,
     ),
     znesek: znesek,
-    qr: qrContent,
+    qrContent: qrContent,
   )
+
+  /*
+  let qrCode = ""
+  qrCode += "UPNQR" + "\n" // 1. Vodilni slog
+  qrCode += data.placnik.iban + "\n" // 2. IBAN plačnika
+  qrCode += "" + "\n" // 3. Polog
+  qrCode += "" + "\n" // 4. Dvig
+  qrCode += data.placnik.referenca1 + " " + data.placnik.referenca2 + "\n" // 5. Referenca plačnika 
+  qrCode += data.placnik.ime + "\n" // 6. Ime plačnika (Obvezno)
+  qrCode += data.placnik.naslov + "\n" // 7. Ulica in št. plačnika (Obvezno)
+  qrCode += data.placnik.kraj + "\n" // 8. Kraj plačnika (Obvezno)
+  qrCode += data.znesek + "\n" // 9. Znesek (Obvezno)
+  qrCode += "" + "\n" // 10. Datum plačika
+  qrCode += "" + "\n" // 11. Nujno
+  qrCode += data.placnik.kodaNamena + "\n" // 12. Koda namena (Obvezno)
+  qrCode += data.placnik.namen + "\n" // 13. Namen plačila (Obvezno)
+  qrCode += data.placnik.rokPlacila + "\n" // 14. Rok plačila
+  qrCode += data.prejemnik.iban + "\n" // 15. IBAN prejemnika (Obvezno)
+  qrCode += data.prejemnik.referenca1 + " " + data.prejemnik.referenca2 + "\n" // 16. Referenca prejemnika (Obvezno)
+  qrCode += data.prejemnik.ime + "\n" // 17. Ime prejemnika (Obvezno)
+  qrCode += data.prejemnik.naslov + "\n" // 18. Ulica in št. prejemnika (Obvezno)
+  qrCode += data.prejemnik.kraj + "\n" // 19. Kraj prejemnika (Obvezno)
+  qrCode += "" + "\n" // 19. Kontrolna vsota (Obvezno)
+  */
 
   // Wrapper
   stack(
@@ -131,7 +163,7 @@
             height: 13.5mm,
             stroke: strokeWidth,
             inset: 4pt,
-            data.placnik.ime,
+            data.placnik.ime + "\n" + data.placnik.naslov + "\n" + data.placnik.kraj
           ),
 
           // Namen / rok plačila
@@ -168,7 +200,7 @@
             height: 13.5mm,
             stroke: strokeWidth,
             inset: 4pt,
-            data.prejemnik.ime,
+            data.prejemnik.ime + "\n" + data.prejemnik.naslov + "\n" + data.prejemnik.kraj
           ),
         ),
       ),
@@ -208,7 +240,7 @@
                   height: 40mm,
                   inset: 3mm,
                   // Koda QR
-                  { if (data.qr != "") { tiaoma.upnqr(data.qr) }}
+                  { if (data.qrContent != "") { tiaoma.upnqr(data.qrContent) }}
                 ),
 
                 // Right
@@ -276,7 +308,7 @@
                     height: 15mm,
                     stroke: strokeWidth,
                     inset: 4pt,
-                    data.placnik.ime,
+                    data.placnik.ime + "\n" + data.placnik.naslov + "\n" + data.placnik.kraj
                   ),
 
                   v(3.5mm),
@@ -409,7 +441,7 @@
                 height: 15mm,
                 stroke: strokeWidth,
                 inset: 4pt,
-                data.prejemnik.ime,
+                data.prejemnik.ime + "\n" + data.prejemnik.naslov + "\n" + data.prejemnik.kraj
               ),
             ),
           ),

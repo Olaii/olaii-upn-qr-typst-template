@@ -1,6 +1,6 @@
 #import "../src/upn-qr.typ": upn_qr
 
-#let debug = false
+#let debug = true
 
 // Page setup
 #set page(
@@ -10,9 +10,9 @@
 )
 
 #show: upn_qr.with(
-  imePlacnika: "Poljubno podjetje d.o.o.
-Lepa cesta 10
-2000 Maribor",
+  imePlacnika: "Poljubno podjetje d.o.o.",
+  naslovPlacnika: "Lepa cesta 10",
+  krajPlacnika: "2000 Maribor",
   ibanPlacnika: "SI56 0203 6025 3863 406",
   referencaPlacnika1: "SI00",
   referencaPlacnika2: "1234-12345-123",
@@ -21,9 +21,9 @@ Lepa cesta 10
   kodaNamena: "CPYR",
   datumPlacila: none,
   nujno: true,
-  imePrejemnika: "Olaii d.o.o.
-Litostrojska cesta 44a
-1000 Ljubljana",
+  imePrejemnika: "Olaii d.o.o.",
+  naslovPrejemnika: "Litostrojska cesta 44a",
+  krajPrejemnika: "1000 Ljubljana",
   ibanPrejemnika: "SI56 1010 0005 2910 391",
   referencaPrejemnika1: "SI00",
   referencaPrejemnika2: "1234",

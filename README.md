@@ -4,12 +4,10 @@ Univerzalni plačilni nalog UPN QR (Obrazec UPN QR) template for [typst](https:/
 
 ![Preview](/thumbnail.png)
 
-
-
 ## Example
 
 ```typ
-#import "src/upn-qr.typ": upn_qr
+#import "@preview/upn-qr-typst-template:0.0.1": upn_qr
 
 // Page setup
 #set page(
@@ -19,9 +17,9 @@ Univerzalni plačilni nalog UPN QR (Obrazec UPN QR) template for [typst](https:/
 
 // UPN QR
 #show: upn_qr.with(
-  imePlacnika: "Poljubno podjetje d.o.o.
-Lepa cesta 10
-2000 Maribor",
+  imePlacnika: "Poljubno podjetje d.o.o.",
+  naslovPlacnika: "Lepa cesta 10",
+  krajPlacnika: "2000 Maribor",
   ibanPlacnika: "SI56 0203 6025 3863 406",
   referencaPlacnika1: "SI00",
   referencaPlacnika2: "1234-12345-123",
@@ -30,14 +28,14 @@ Lepa cesta 10
   kodaNamena: "CPYR",
   datumPlacila: none,
   nujno: true,
-  imePrejemnika: "Olaii d.o.o.
-Litostrojska cesta 44a
-1000 Ljubljana",
+  imePrejemnika: "Olaii d.o.o.",
+  naslovPrejemnika: "Litostrojska cesta 44a",
+  krajPrejemnika: "1000 Ljubljana",
   ibanPrejemnika: "SI56 1010 0005 2910 391",
   referencaPrejemnika1: "SI00",
   referencaPrejemnika2: "1234",
-  znesek: "***100,00"
-  qrContent: "generated code for qr"
+  znesek: "***100,00",
+  qrContent: "Generated qr code"
 )
 ```
 
