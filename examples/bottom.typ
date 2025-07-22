@@ -1,6 +1,6 @@
 #import "../src/upn-qr.typ": upn_qr
 
-#let debug = false
+#let debug = true
 
 // Page setup
 #set page(
@@ -12,7 +12,7 @@
 #set par(spacing: 0pt)
 
 #block(
-  height: 197mm,
+  height: 198mm,
   inset: 2cm,
   lorem(200)
 )
@@ -36,5 +36,6 @@
   referencaPrejemnika1: "SI00",
   referencaPrejemnika2: "1234",
   znesek: "***100,00",
+  qrContent: "This is a test",
   debug: debug
 )

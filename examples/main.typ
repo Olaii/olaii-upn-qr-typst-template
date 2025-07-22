@@ -28,5 +28,6 @@
   referencaPrejemnika1: "SI00",
   referencaPrejemnika2: "1234",
   znesek: "***100,00",
+  qrContent: "This is a test",
   debug: debug
 )
