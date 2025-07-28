@@ -16,7 +16,7 @@ Univerzalni plačilni nalog UPN QR (Obrazec UPN QR) template for [typst](https:/
 )
 
 // UPN QR
-#show: upn-qr.with(
+#upn-qr(
   ime-placnika: "Poljubno podjetje d.o.o.",
   naslov-placnika: "Lepa cesta 10",
   kraj-placnika: "2000 Maribor",
