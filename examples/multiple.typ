@@ -31,7 +31,7 @@
   referencaPrejemnika2: "1234",
   znesek: "***100,00",
   qrContent: "This is a test",
-  topOffset: -3mm,
+  topOffset: -3mm, // Printer specific offset
   debug: debug
 )
 
@@ -55,7 +55,7 @@
   referencaPrejemnika2: "1234",
   znesek: "***100,00",
   qrContent: "This is a test",
-  topOffset: -1.5mm,
+  topOffset: -1.5mm, // Printer specific offset
   debug: debug
 )
 
