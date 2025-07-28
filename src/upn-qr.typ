@@ -1,39 +1,39 @@
 #import "@preview/tiaoma:0.3.0" // For QR code
 
-#let upn_qr(
-  imePlacnika: "",
-  naslovPlacnika: "",
-  krajPlacnika: "",
-  ibanPlacnika: "",
-  referencaPlacnika1: "",
-  referencaPlacnika2: "",
-  namenPlacila: "",
-  rokPlacila: "",
-  kodaNamena: "",
-  datumPlacila: "",
+#let upn-qr(
+  ime-placnika: "",
+  naslov-placnika: "",
+  kraj-placnika: "",
+  iban-placnika: "",
+  referenca-placnika-1: "",
+  referenca-placnika-2: "",
+  namen-placila: "",
+  rok-placila: "",
+  koda-namena: "",
+  datum-placila: "",
   nujno: false,
   polog: false,
   dvig: false,
 
-  imePrejemnika: "",
-  naslovPrejemnika: "",
-  krajPrejemnika: "",
-  ibanPrejemnika: "",
-  referencaPrejemnika1: "",
-  referencaPrejemnika2: "",
+  ime-prejemnika: "",
+  naslov-prejemnika: "",
+  kraj-prejemnika: "",
+  iban-prejemnika: "",
+  referenca-prejemnika-1: "",
+  referenca-prejemnika-2: "",
 
   znesek: "",
-  qrContent: "",
+  qr-content: "",
 
-  topOffset: 0mm,
-  leftOffset: 0mm,
+  top-offset: 0mm,
+  left-offset: 0mm,
 
   debug: false,
-  debugWithBackground: false,
+  debug-with-background: false,
 ) = {
   // Debug
   let debug = debug
-  let strokeWidth = if (debug) { 0.5pt } else { 0pt };
+  let stroke-width = if (debug) { 0.5pt } else { 0pt };
 
   // Font
   set text(
@@ -55,13 +55,13 @@
   )
 
   // Boolean box
-  let booleanBox(value) = stack(
+  let boolean-box(value) = stack(
     dir: ttb,
     v(0.5mm),
     rect(
       width: 4mm, 
       height: 4mm, 
-      stroke: strokeWidth,
+      stroke: stroke-width,
       align(center + horizon, block(if (value == true) {"X"}))
     )
   )
@@ -69,30 +69,30 @@
   // Test data
   let data = (
     placnik: (
-      ime: imePlacnika,
-      naslov: naslovPlacnika,
-      kraj: krajPlacnika,
-      iban: ibanPlacnika,
-      referenca1: referencaPlacnika1,
-      referenca2: referencaPlacnika2,
-      namen: namenPlacila,
-      rokPlacila: rokPlacila,
-      kodaNamena: kodaNamena,
-      datumPlacila: datumPlacila,
+      ime: ime-placnika,
+      naslov: naslov-placnika,
+      kraj: kraj-placnika,
+      iban: iban-placnika,
+      referenca1: referenca-placnika-1,
+      referenca2: referenca-placnika-2,
+      namen: namen-placila,
+      rok-placila: rok-placila,
+      koda-namena: koda-namena,
+      datum-placila: datum-placila,
       nujno: nujno,
       polog: polog,
       dvig: dvig,
     ),
     prejemnik: (
-      ime: imePrejemnika,
-      naslov: naslovPrejemnika,
-      kraj: krajPrejemnika,
-      iban: ibanPrejemnika,
-      referenca1: referencaPrejemnika1,
-      referenca2: referencaPrejemnika2,
+      ime: ime-prejemnika,
+      naslov: naslov-prejemnika,
+      kraj: kraj-prejemnika,
+      iban: iban-prejemnika,
+      referenca1: referenca-prejemnika-1,
+      referenca2: referenca-prejemnika-2,
     ),
     znesek: znesek,
-    qrContent: qrContent,
+    qr-content: qr-content,
   )
 
   /*
@@ -108,9 +108,9 @@
   qrCode += data.znesek + "\n" // 9. Znesek (Obvezno)
   qrCode += "" + "\n" // 10. Datum plačika
   qrCode += "" + "\n" // 11. Nujno
-  qrCode += data.placnik.kodaNamena + "\n" // 12. Koda namena (Obvezno)
+  qrCode += data.placnik.koda-namena + "\n" // 12. Koda namena (Obvezno)
   qrCode += data.placnik.namen + "\n" // 13. Namen plačila (Obvezno)
-  qrCode += data.placnik.rokPlacila + "\n" // 14. Rok plačila
+  qrCode += data.placnik.rok-placila + "\n" // 14. Rok plačila
   qrCode += data.prejemnik.iban + "\n" // 15. IBAN prejemnika (Obvezno)
   qrCode += data.prejemnik.referenca1 + " " + data.prejemnik.referenca2 + "\n" // 16. Referenca prejemnika (Obvezno)
   qrCode += data.prejemnik.ime + "\n" // 17. Ime prejemnika (Obvezno)
@@ -123,7 +123,7 @@
   block(
     height: 99mm, // A bit smaller so 3 can fit on one page
     width: 210mm,
-    stroke: strokeWidth,
+    stroke: stroke-width,
     inset: 0pt,
     clip: true,
     fill: none,
@@ -131,13 +131,13 @@
     // Offset wrapper
     place(
       top + left,
-      dx: leftOffset,
-      dy: topOffset,
+      dx: left-offset,
+      dy: top-offset,
       stack(
         dir: ltr,
         spacing: 0pt,
 
-        if debugWithBackground {
+        if debug-with-background {
           // Background
           place(
             dx: 0pt, 
@@ -152,7 +152,7 @@
         block(
           width: 60mm,
           height: 100%,
-          stroke: strokeWidth,
+          stroke: stroke-width,
           inset: (
             top: 6mm,
             right: 3.5mm,
@@ -167,7 +167,7 @@
             block(
               width: 52.5mm,
               height: 13.5mm,
-              stroke: strokeWidth,
+              stroke: stroke-width,
               inset: 4pt,
               data.placnik.ime + "\n" + data.placnik.naslov + "\n" + data.placnik.kraj
             ),
@@ -178,7 +178,7 @@
             block(
               width: 52.5mm,
               height: 9mm,
-              stroke: strokeWidth,
+              stroke: stroke-width,
               inset: 4pt,
               data.placnik.namen,
             ),
@@ -189,7 +189,7 @@
             align(right, block(
               width: 40mm,
               height: 5mm,
-              stroke: strokeWidth,
+              stroke: stroke-width,
               inset: 4pt,
               data.znesek,
             )),
@@ -200,7 +200,7 @@
             block(
               width: 52.5mm,
               height: 13.5mm,
-              stroke: strokeWidth,
+              stroke: stroke-width,
               inset: 4pt,
               data.prejemnik.iban + "\n" + data.prejemnik.referenca1 + " " + data.prejemnik.referenca2,
             ),
@@ -211,7 +211,7 @@
             block(
               width: 52.5mm,
               height: 13.5mm,
-              stroke: strokeWidth,
+              stroke: stroke-width,
               inset: 4pt,
               data.prejemnik.ime + "\n" + data.prejemnik.naslov + "\n" + data.prejemnik.kraj
             ),
@@ -231,7 +231,7 @@
             block(
               width: 100%,
               height: 55mm,
-              stroke: strokeWidth,
+              stroke: stroke-width,
               inset: (
                 top: 6mm,
                 left: 3.5mm,
@@ -253,9 +253,9 @@
                     width: 40mm,
                     height: 39.5mm,
                     inset: 3mm,
-                    stroke: strokeWidth,
+                    stroke: stroke-width,
                     // Koda QR
-                    { if (data.qrContent != "") { tiaoma.upnqr(data.qrContent) }}
+                    { if (data.qr-content != "") { tiaoma.upnqr(data.qr-content) }}
                   ),
 
                   // Right
@@ -270,7 +270,7 @@
                       block(
                         width: 72mm,
                         height: 5mm,
-                        stroke: strokeWidth,
+                        stroke: stroke-width,
                         inset: 4pt,
                         data.placnik.iban,
                       ),
@@ -279,13 +279,13 @@
                       h(7.5mm),
 
                       // Polog
-                      booleanBox(data.placnik.polog),
+                      boolean-box(data.placnik.polog),
 
                       // Spacer
                       h(7.5mm),
 
                       // Dvig
-                      booleanBox(data.placnik.dvig),
+                      boolean-box(data.placnik.dvig),
                     ),
 
                     v(3mm),
@@ -299,7 +299,7 @@
                       block(
                         width: 15mm,
                         height: 5mm,
-                        stroke: strokeWidth,
+                        stroke: stroke-width,
                         inset: 4pt,
                         data.placnik.referenca1,
                       ),
@@ -308,7 +308,7 @@
                       block(
                         width: 82.5mm,
                         height: 5mm,
-                        stroke: strokeWidth,
+                        stroke: stroke-width,
                         inset: 4pt,
                         data.placnik.referenca2,
                       ),
@@ -321,7 +321,7 @@
                     block(
                       width: 99.5mm,
                       height: 15mm,
-                      stroke: strokeWidth,
+                      stroke: stroke-width,
                       inset: 4pt,
                       data.placnik.ime + "\n" + data.placnik.naslov + "\n" + data.placnik.kraj
                     ),
@@ -339,7 +339,7 @@
                       block(
                         width: 42mm,
                         height: 5mm,
-                        stroke: strokeWidth,
+                        stroke: stroke-width,
                         inset: 4pt,
                         data.znesek,
                       ),
@@ -351,16 +351,16 @@
                       block(
                         width: 30mm,
                         height: 5mm,
-                        stroke: strokeWidth,
+                        stroke: stroke-width,
                         inset: 4pt,
-                        data.placnik.datumPlacila,
+                        data.placnik.datum-placila,
                       ),
 
                       // Spacer
                       h(6mm),
 
                       // Nujno
-                      booleanBox(data.placnik.nujno),
+                      boolean-box(data.placnik.nujno),
                     ),
                   ),
                 ),
@@ -374,16 +374,16 @@
                   block(
                     width: 15mm,
                     height: 5mm,
-                    stroke: strokeWidth,
+                    stroke: stroke-width,
                     inset: 4pt,
-                    data.placnik.kodaNamena,
+                    data.placnik.koda-namena,
                   ),
 
                   // Namen plačila
                   block(
                     width: 94mm,
                     height: 5mm,
-                    stroke: strokeWidth,
+                    stroke: stroke-width,
                     inset: 4pt,
                     data.placnik.namen,
                   ),
@@ -392,9 +392,9 @@
                   block(
                     width: 29mm,
                     height: 5mm,
-                    stroke: strokeWidth,
+                    stroke: stroke-width,
                     inset: 4pt,
-                    data.placnik.rokPlacila,
+                    data.placnik.rok-placila,
                   ),
                 ),
               ),
@@ -404,7 +404,7 @@
             block(
               width: 100%,
               height: 44mm,
-              stroke: strokeWidth,
+              stroke: stroke-width,
               inset: (
                 top: 3mm,
                 left: 3.5mm,
@@ -419,9 +419,9 @@
                 // Row 1
                 // IBAN prejemnika
                 block(
-                  width: 127.5mm,
+                  width: 128mm,
                   height: 5mm,
-                  stroke: strokeWidth,
+                  stroke: stroke-width,
                   inset: 4pt,
                   data.prejemnik.iban,
                 ),
@@ -435,16 +435,16 @@
                   block(
                     width: 15mm,
                     height: 5mm,
-                    stroke: strokeWidth,
+                    stroke: stroke-width,
                     inset: 4pt,
                     data.prejemnik.referenca1,
                   ),
 
                   // Referenca prejemnika 2
                   block(
-                    width: 82.5mm,
+                    width: 83mm,
                     height: 5mm,
-                    stroke: strokeWidth,
+                    stroke: stroke-width,
                     inset: 4pt,
                     data.prejemnik.referenca2,
                   ),
@@ -453,9 +453,9 @@
                 // Row 3
                 // Ime, ulica in kraj prejemnika
                 block(
-                  width: 99.5mm,
+                  width: 100mm,
                   height: 15mm,
-                  stroke: strokeWidth,
+                  stroke: stroke-width,
                   inset: 4pt,
                   data.prejemnik.ime + "\n" + data.prejemnik.naslov + "\n" + data.prejemnik.kraj
                 ),
