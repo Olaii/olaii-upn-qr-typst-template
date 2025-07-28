@@ -49,8 +49,12 @@ typst watch examples/bottom.typ --root ../
 typst watch examples/multiple.typ --root ../
 ```
 
+## License
+
+Download the [MIT License](https://github.com/Olaii/upn-qr-typst-template/blob/main/LICENSE)
+
 ## Changelog
 
-### **v0.0.1** - 18.7.2025
+### **v0.0.1** - 28.7.2025
 
 Initial Release
