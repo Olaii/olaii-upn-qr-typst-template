@@ -157,7 +157,6 @@
 
         stack(
           dir: ttb,
-          spacing: 3mm,
 
           // Ime plačnika
           block(
@@ -168,6 +167,8 @@
             data.placnik.ime + "\n" + data.placnik.naslov + "\n" + data.placnik.kraj
           ),
 
+          v(3mm),
+
           // Namen / rok plačila
           block(
             width: 52.5mm,
@@ -176,6 +177,8 @@
             inset: 4pt,
             data.placnik.namen,
           ),
+
+          v(3mm),
 
           // Znesek
           align(right, block(
@@ -186,6 +189,7 @@
             data.znesek,
           )),
 
+          v(3mm),
 
           // IBAN in referenca prejemnika
           block(
@@ -195,6 +199,8 @@
             inset: 4pt,
             data.prejemnik.iban + "\n" + data.prejemnik.referenca1 + " " + data.prejemnik.referenca2,
           ),
+
+          v(3mm),
 
           // Ime prejemnika
           block(
@@ -257,7 +263,7 @@
 
                     // IBAN Plačnika
                     block(
-                      width: 71.25mm,
+                      width: 72mm,
                       height: 5mm,
                       stroke: strokeWidth,
                       inset: 4pt,
@@ -271,7 +277,7 @@
                     booleanBox(data.placnik.polog),
 
                     // Spacer
-                    h(7.25mm),
+                    h(7.5mm),
 
                     // Dvig
                     booleanBox(data.placnik.dvig),
@@ -326,7 +332,7 @@
 
                     // Znesek
                     block(
-                      width: 41.25mm,
+                      width: 42mm,
                       height: 5mm,
                       stroke: strokeWidth,
                       inset: 4pt,
@@ -334,7 +340,7 @@
                     ),
                   
                     // Spacer
-                    h(5.75mm),
+                    h(6mm),
 
                     // Datum plačila
                     block(
@@ -346,7 +352,7 @@
                     ),
 
                     // Spacer
-                    h(5.25mm),
+                    h(6mm),
 
                     // Nujno
                     booleanBox(data.placnik.nujno),
@@ -370,7 +376,7 @@
 
                 // Namen plačila
                 block(
-                  width: 93.75mm,
+                  width: 94mm,
                   height: 5mm,
                   stroke: strokeWidth,
                   inset: 4pt,
@@ -379,7 +385,7 @@
 
                 // Rok plačila
                 block(
-                  width: 29.75mm,
+                  width: 29mm,
                   height: 5mm,
                   stroke: strokeWidth,
                   inset: 4pt,
