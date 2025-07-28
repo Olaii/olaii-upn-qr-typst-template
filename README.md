@@ -36,7 +36,8 @@ Univerzalni plačilni nalog UPN QR (Obrazec UPN QR) template for [typst](https:/
   referencaPrejemnika2: "1234",
   znesek: "***100,00",
   qrContent: "Generated qr code",
-  debug: false
+  debug: false,
+  debugWithBackground: false
 )
 ```
 

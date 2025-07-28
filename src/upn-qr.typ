@@ -25,9 +25,11 @@
   znesek: "",
   qrContent: "",
 
-  debug: false,
+  topOffset: 0mm,
+  leftOffset: 0mm,
 
-  doc,
+  debug: false,
+  debugWithBackground: false,
 ) = {
   // Debug
   let debug = debug
@@ -130,7 +132,7 @@
       dir: ltr,
       spacing: 0pt,
 
-      if debug {
+      if debugWithBackground {
         // Background
         place(
           dx: 0pt, 
@@ -145,6 +147,7 @@
       block(
         width: 60mm,
         height: 100%,
+        stroke: strokeWidth,
         inset: (
           top: 6mm,
           right: 3.5mm,
@@ -451,5 +454,4 @@
       ),
     ),
   )
-  doc
 }

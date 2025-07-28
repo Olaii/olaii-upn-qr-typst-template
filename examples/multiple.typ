@@ -5,13 +5,13 @@
 // Page setup
 #set page(
   paper: "a4",
-  margin: 0pt,
+  margin: 0pt
 )
 
 // 3 on one page
 #set par(spacing: 0pt)
 
-#show: upn_qr.with(
+#upn_qr(
   imePlacnika: "Poljubno podjetje d.o.o.",
   naslovPlacnika: "Lepa cesta 10",
   krajPlacnika: "2000 Maribor",
@@ -31,10 +31,11 @@
   referencaPrejemnika2: "1234",
   znesek: "***100,00",
   qrContent: "This is a test",
+  topOffset: -3mm,
   debug: debug
 )
 
-#show: upn_qr.with(
+#upn_qr(
   imePlacnika: "Poljubno podjetje d.o.o.",
   naslovPlacnika: "Lepa cesta 10",
   krajPlacnika: "2000 Maribor",
@@ -54,10 +55,11 @@
   referencaPrejemnika2: "1234",
   znesek: "***100,00",
   qrContent: "This is a test",
+  topOffset: -1.5mm,
   debug: debug
 )
 
-#show: upn_qr.with(
+#upn_qr(
   imePlacnika: "Poljubno podjetje d.o.o.",
   naslovPlacnika: "Lepa cesta 10",
   krajPlacnika: "2000 Maribor",

@@ -1,4 +1,4 @@
-#import "../src/upn-qr.typ": upn_qr
+#import "../src/upn-qr.typ": *
 
 #let debug = true
 
@@ -17,7 +17,7 @@
   lorem(200)
 )
 
-#show: upn_qr.with(
+#upn_qr(
   imePlacnika: "Poljubno podjetje d.o.o.",
   naslovPlacnika: "Lepa cesta 10",
   krajPlacnika: "2000 Maribor",
@@ -37,5 +37,6 @@
   referencaPrejemnika2: "1234",
   znesek: "***100,00",
   qrContent: "This is a test",
-  debug: debug
+  debug: debug,
+  debugWithBackground: false
 )
