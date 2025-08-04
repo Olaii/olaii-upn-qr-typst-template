@@ -1,4 +1,4 @@
-#import "@preview/upn-qr:0.0.1": *
+#import "@preview/olaii-upn-qr:0.0.1": *
 
 #let debug = true
 
@@ -17,7 +17,7 @@
   lorem(200)
 )
 
-#upn-qr(
+#olaii-upn-qr(
   ime-placnika: "Poljubno podjetje d.o.o.",
   naslov-placnika: "Lepa cesta 10",
   kraj-placnika: "2000 Maribor",
