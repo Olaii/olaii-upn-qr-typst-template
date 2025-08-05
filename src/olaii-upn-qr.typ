@@ -248,7 +248,18 @@
                     inset: 3mm,
                     stroke: stroke-width,
                     // Koda QR
-                    { if (data.qr-content != "") { tiaoma.upnqr(data.qr-content) }}
+                    { 
+                      if (data.qr-content != "") {
+                        tiaoma.upnqr(
+                          data.qr-content, 
+                          options: ( 
+                            input-mode: (
+                              unicode: true
+                            )
+                          )
+                        ) 
+                      }
+                    }
                   ),
 
                   // Right
