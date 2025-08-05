@@ -35,13 +35,6 @@
   let debug = debug
   let stroke-width = if (debug) { 0.5pt } else { 0pt };
 
-  // Font
-  set text(
-    font: "Arial",
-    size: 8pt,
-    fill: black,
-  )
-
   // Default rect
   set block(
     fill: none,

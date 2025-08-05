@@ -15,6 +15,13 @@ Univerzalni plačilni nalog UPN QR (Obrazec UPN QR) template for [typst](https:/
   margin: 0pt,
 )
 
+// Font
+#set text(
+  font: "Arial",
+  size: 8pt,
+  fill: black,
+)
+
 // UPN QR
 #olaii-upn-qr(
   ime-placnika: "Poljubno podjetje d.o.o.",

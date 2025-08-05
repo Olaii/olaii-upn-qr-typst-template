@@ -8,6 +8,13 @@
   margin: 0pt,
 )
 
+// Font
+#set text(
+  font: "Arial",
+  size: 8pt,
+  fill: black,
+)
+
 // 3 on one page
 #set par(spacing: 0pt)
 

@@ -9,6 +9,13 @@
   margin: 0pt,
 )
 
+// Font
+#set text(
+  font: "Arial",
+  size: 8pt,
+  fill: black,
+)
+
 #olaii-upn-qr(
   ime-placnika: "Poljubno podjetje d.o.o.",
   naslov-placnika: "Lepa cesta 10",
