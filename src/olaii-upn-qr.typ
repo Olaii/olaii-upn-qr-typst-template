@@ -1,4 +1,5 @@
 #import "@preview/tiaoma:0.3.0" // For QR code
+#import "@preview/based:0.2.0": base64 // For external base64 QR images
 
 #let olaii-upn-qr(
   ime-placnika: "",
@@ -23,7 +24,8 @@
   referenca-prejemnika-2: "",
 
   znesek: "",
-  qr-content: "",
+  qr-content: none,
+  qr-image-base64: none,
 
   top-offset: 0mm,
   left-offset: 0mm,
@@ -86,6 +88,7 @@
     ),
     znesek: znesek,
     qr-content: qr-content,
+    qr-image-base64: qr-image-base64,
   )
 
   /*
@@ -249,7 +252,7 @@
                     stroke: stroke-width,
                     // Koda QR
                     { 
-                      if (data.qr-content != "") {
+                      if (data.qr-content != none and data.qr-content != "") {
                         tiaoma.upnqr(
                           data.qr-content, 
                           options: ( 
@@ -258,6 +261,8 @@
                             )
                           )
                         ) 
+                      } else if (data.qr-image-base64 != none) {
+                        image(base64.decode(data.qr-image-base64), width: 3.5cm)
                       }
                     }
                   ),

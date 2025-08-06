@@ -16,6 +16,9 @@
   fill: black,
 )
 
+#let base64-encoded-image = "iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAACXBIWXMAAC4jAAAuIwF4pT92AAAASUlEQVQYGa3OWwoAIAgEQNf739k0EjVCfxKCHtMqiEh0jcWjOKBAkQjPe7MFdun/IbRdDNb05nvolzWzEx0DdozK96W1PzjNHxcgphkBs9CoHwAAAABJRU5ErkJggg=="
+
+
 #olaii-upn-qr(
   ime-placnika: "Poljubno podjetje d.o.o.",
   naslov-placnika: "Lepa cesta 10",
@@ -36,6 +39,7 @@
   referenca-prejemnika-2: "1234",
   znesek: "***100,00",
   qr-content: "This is a test",
+  qr-image-base64: base64-encoded-image,
   debug: debug,
   debug-with-background: debug
 )
