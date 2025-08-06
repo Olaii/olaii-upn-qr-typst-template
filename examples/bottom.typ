@@ -1,4 +1,4 @@
-#import "@preview/olaii-upn-qr:0.0.1": *
+#import "@preview/olaii-upn-qr:0.0.2": olaii-upn-qr
 
 #let debug = true
 

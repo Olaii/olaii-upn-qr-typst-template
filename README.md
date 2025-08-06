@@ -7,7 +7,7 @@ Univerzalni plačilni nalog UPN QR (Obrazec UPN QR) template for [typst](https:/
 ## Example
 
 ```typ
-#import "@preview/olaii-upn-qr:0.0.1": olaii-upn-qr
+#import "@preview/olaii-upn-qr:0.0.2": olaii-upn-qr
 
 // Page setup
 #set page(
@@ -61,6 +61,13 @@ typst watch examples/multiple.typ --root ../
 Download the [MIT License](https://github.com/Olaii/olaii-upn-qr-typst-template/blob/main/LICENSE)
 
 ## Changelog
+
+### **v0.0.2** - 5.8.2025
+
+- fixed qr code to use utf-8 input,
+- added support for base64 ar image,
+- moved font outside the template,
+- updated upn-qr background image
 
 ### **v0.0.1** - 28.7.2025
 

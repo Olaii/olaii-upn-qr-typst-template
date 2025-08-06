@@ -1,6 +1,6 @@
 [package]
 name = "olaii-upn-qr"
-version = "0.0.1"
+version = "0.0.2"
 entrypoint = "src/olaii-upn-qr.typ"
 authors = ["Olaii d.o.o. <https://olaii.com>"]
 license = "MIT"
